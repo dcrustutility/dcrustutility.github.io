@@ -8,7 +8,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-136125800-1');
 </script>
 
@@ -19,7 +18,7 @@
         <p>At DCRUST, every semester you are awarded a SGPA. At the end of course average of all SGPA is calculated as <A HREF='cgpa_calc.html'>CGPA.</A></p>
         <p>SGPA/CGPA can be converted to equivalent percentage by multiplying 9.5 to the SGPA/CGPA respectively.</p>
         
-        <button onclick="showTable()">Show SGPA Calculator</button>
+        <button onclick="showTable()">Show SGPA Calculator</button><BR>
         <div id='tableArea' hidden=true>
         <p>For Demo purpose only. Author makes no claim of accuracy. All calculations are performed on your device. Your marks are never sent to server.</p>
         <BR><button onclick="clearAll()">Clear All</button>
@@ -217,6 +216,6 @@
         <BR>SGPA= <input type="number" id="sgpa2" disabled>
         <BR>Percentage= <input type="number" id="per2" disabled>
     </div>
-    <BR><A HREF='cgpa_calc.html'>Click here for CGPA Calculator.</A>
+    <BR><BR><A HREF='cgpa_calc.html'>Click here for CGPA Calculator.</A>
     </body>
 </html>
