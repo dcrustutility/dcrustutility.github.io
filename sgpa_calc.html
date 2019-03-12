@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <script src="sgpa_calc.js"></script>
+    </head>
+    <body onload="loadValues()">
+        <h1>DCRUST SGPA Calculator</h1>
+        <p>This Calculator will help you calculate,visualize the effect of change in marks in your SGPA.</p> 
+        <p>At DCRUST, every semester you are awarded a SGPA. At the end of course average of all SGPA is calculated as <A HREF='cgpa_calc.html'>CGPA.</A></p>
+        <p>SGPA/CGPA can be converted to equivalent percentage by multiplying 9.5 to the SGPA/CGPA respectively.</p>
+        
+        <button onclick="showTable()">Show SGPA Calculator</button>
+        <div id='tableArea' hidden=true>
+        <p>For Demo purpose only. Author makes no claim of accuracy. All calculations are perrformed on your device. Your marks are never sent to server.</p>
+        <BR><button onclick="clearAll()">Clear All</button>
+        <BR>SGPA= <input type="number" id="sgpa1" disabled>
+        <BR>Percentage= <input type="number" id="per1" disabled>
+        <table border="solid">
+            <tr>
+                <td>Subject Name</td>
+                <td>Credits</td>
+                <td>Max Marks</td>
+                <td>Marks Obtained</td>
+                <td>Grades</td>
+            </tr>
+            <!-- row 1 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname1" onkeyup="calcGrade(1)"></td>
+                <td><input type="number" id="credit1" placeholder="Credits" onkeyup="calcGrade(1)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses1" onkeyup="calcGrade(1)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo1" onkeyup="calcGrade(1)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses1" onkeyup="calcGrade(1)"></td></tr>
+                        <tr><td><input type="number" id="obttheo1" onkeyup="calcGrade(1)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade1" disabled="true"><input type="number" id="points1" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 2 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname2" onkeyup="calcGrade(2)"></td>
+                <td><input type="number" id="credit2" placeholder="Credits" onkeyup="calcGrade(2)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses2" onkeyup="calcGrade(2)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo2" onkeyup="calcGrade(2)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses2" onkeyup="calcGrade(2)"></td></tr>
+                        <tr><td><input type="number" id="obttheo2" onkeyup="calcGrade(2)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade2" disabled="true"><input type="number" id="points2" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 3 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname3" onkeyup="calcGrade(3)"></td>
+                <td><input type="number" id="credit3" placeholder="Credits" onkeyup="calcGrade(3)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses3" onkeyup="calcGrade(3)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo3" onkeyup="calcGrade(3)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses3" onkeyup="calcGrade(3)"></td></tr>
+                        <tr><td><input type="number" id="obttheo3" onkeyup="calcGrade(3)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade3" disabled="true"><input type="number" id="points3" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 4 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname4" onkeyup="calcGrade(4)"></td>
+                <td><input type="number" id="credit4" placeholder="Credits" onkeyup="calcGrade(4)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses4" onkeyup="calcGrade(4)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo4" onkeyup="calcGrade(4)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses4" onkeyup="calcGrade(4)"></td></tr>
+                        <tr><td><input type="number" id="obttheo4" onkeyup="calcGrade(4)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade4" disabled="true"><input type="number" id="points4" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 5 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname5" onkeyup="calcGrade(5)"></td>
+                <td><input type="number" id="credit5" placeholder="Credits" onkeyup="calcGrade(5)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses5" onkeyup="calcGrade(5)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo5" onkeyup="calcGrade(5)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses5" onkeyup="calcGrade(5)"></td></tr>
+                        <tr><td><input type="number" id="obttheo5" onkeyup="calcGrade(5)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade5" disabled="true"><input type="number" id="points5" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 6 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname6" onkeyup="calcGrade(6)"></td>
+                <td><input type="number" id="credit6" placeholder="Credits" onkeyup="calcGrade(6)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses6" onkeyup="calcGrade(6)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo6" onkeyup="calcGrade(6)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses6" onkeyup="calcGrade(6)"></td></tr>
+                        <tr><td><input type="number" id="obttheo6" onkeyup="calcGrade(6)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade6" disabled="true"><input type="number" id="points6" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 7 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname7" onkeyup="calcGrade(7)"></td>
+                <td><input type="number" id="credit7" placeholder="Credits" onkeyup="calcGrade(7)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses7" onkeyup="calcGrade(7)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo7" onkeyup="calcGrade(7)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses7" onkeyup="calcGrade(7)"></td></tr>
+                        <tr><td><input type="number" id="obttheo7" onkeyup="calcGrade(7)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade7" disabled="true"><input type="number" id="points7" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 8 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname8" onkeyup="calcGrade(8)"></td>
+                <td><input type="number" id="credit8" placeholder="Credits" onkeyup="calcGrade(8)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses8" onkeyup="calcGrade(8)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo8" onkeyup="calcGrade(8)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses8" onkeyup="calcGrade(8)"></td></tr>
+                        <tr><td><input type="number" id="obttheo8" onkeyup="calcGrade(8)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade8" disabled="true"><input type="number" id="points8" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 9 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname9" onkeyup="calcGrade(9)"></td>
+                <td><input type="number" id="credit9" placeholder="Credits" onkeyup="calcGrade(9)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses9" onkeyup="calcGrade(9)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo9" onkeyup="calcGrade(9)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses9" onkeyup="calcGrade(9)"></td></tr>
+                        <tr><td><input type="number" id="obttheo9" onkeyup="calcGrade(9)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade9" disabled="true"><input type="number" id="points9" hidden="true" disabled="true"></td>
+            </tr>
+            <!-- row 10 -->
+            <tr>
+                <td><input type="text" placeholder="Subject Name" id="subname10" onkeyup="calcGrade(10)"></td>
+                <td><input type="number" id="credit10" placeholder="Credits" onkeyup="calcGrade(10)"></td>
+                <td>
+                    <table>
+                        <tr><td>Sessional-</td><td><input type="number" id="maxses10" onkeyup="calcGrade(10)"></td></tr>
+                        <tr><td>Theory-</td><td><input type="number" id="maxtheo10" onkeyup="calcGrade(10)"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td><input type="number" id="obtses10" onkeyup="calcGrade(10)"></td></tr>
+                        <tr><td><input type="number" id="obttheo10" onkeyup="calcGrade(10)"></td></tr>
+                    </table>
+                </td>
+                <td><input type="text" id="grade10" disabled="true"><input type="number" id="points10" hidden="true" disabled="true"></td>
+            </tr>
+        </table>
+        <BR>SGPA= <input type="number" id="sgpa2" disabled>
+        <BR>Percentage= <input type="number" id="per2" disabled>
+    </div>
+    <BR><A HREF='cgpa_calc.html'>Click here for CGPA Calculator.</A>
+    </body>
+</html>

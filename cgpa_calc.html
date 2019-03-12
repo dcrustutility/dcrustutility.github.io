@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <script src="cgpa_calc.js"></script>
+    </head>
+    <body onload="loadValues()">
+        <h1>DCRUST CGPA Calculator</h1>
+        <p>This Calculator will help you calculate,visualize the effect of change in your <A HREF='sgpa_calc.html'>SGPA.</A></p> 
+        <p>At DCRUST, every semester you are awarded and SGPA. At the end of course average of all SGPA is calculated as CGPA.</p>
+        <p>SGPA/CGPA can be converted to equivalent percentage by multiplying 9.5 to the SGPA/CGPA respectively.</p>
+        <p>For Demo purpose only. Author makes no claim of accuracy. All calculations are perrformed on your device. Your marks are never sent to server.</p>
+        <button onclick="clearAll()">Clear All</button>
+        <table border="solid">
+            <tr><td>Sem 1 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa1"/></td></tr>
+            <tr><td>Sem 2 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa2"/></td></tr>
+            <tr><td>Sem 3 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa3"/></td></tr>
+            <tr><td>Sem 4 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa4"/></td></tr>
+            <tr><td>Sem 5 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa5"/></td></tr>
+            <tr><td>Sem 6 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa6"/></td></tr>
+            <tr><td>Sem 7 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa7"/></td></tr>
+            <tr><td>Sem 8 SGPA</td><td><input type="number" onkeyup="calcCGPA()" id="sgpa8"/></td></tr>
+            <tr><td>Total CGPA</td><td><input type="number" id="cgpa" disabled/></td></tr>
+            <tr><td>Percentage</td><td><input type="number" id="per" disabled/></td></tr>     
+        </table>
+    </div>
+    <A HREF='sgpa_calc.html'>Click here for SGPA Calculator.</A>
+    </body>
+</html>
