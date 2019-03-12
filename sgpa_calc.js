@@ -116,6 +116,9 @@
             var obtses=document.getElementById("obtses"+row).value*1;
             var obttheo=document.getElementById("obttheo"+row).value*1;
             var percentage=((obtses+obttheo)/(maxses+maxtheo))*100;
+
+            var percentageSes=-1;
+            var percentageTheo=-1;
             
             if(percentage>=90)
             {
@@ -148,6 +151,21 @@
                 setPoints(row,-1,null);
             else
                 setPoints(row,-1,null);
+
+
+                if(maxses>0)
+                {
+                   percentageSes=(obtses/maxses)*100;
+                   if(percentageSes<40)
+                        setPoints(row,0,"F");  
+                }
+                if(maxtheo>0)
+                {
+                   percentageTheo=(obttheo/maxtheo)*100;
+                   if(percentageTheo<40)
+                        setPoints(row,0,"F");  
+                }
+
 
             if(!isNaN(percentage))
                 storeValues(row);
